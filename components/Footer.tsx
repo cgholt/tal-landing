@@ -7,12 +7,12 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 border-t-2 border-secondary">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+    <footer className="mt-16 border-t border-border">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-12">
         {/* Crisis Disclaimer + Badges Row */}
         <div className="mb-8 flex flex-col md:flex-row items-center gap-6">
-          <div className="flex-1 rounded-none border border-accent/30 bg-tertiary p-4">
-            <p className="text-sm text-primary">
+          <div className="flex-1 rounded-md border border-border bg-muted p-4">
+            <p className="text-sm text-surface-foreground">
               <strong className="text-accent">Important:</strong> This website is not intended for crisis situations.
               If you are experiencing a mental health emergency, please call{" "}
               <a href="tel:988" className="text-accent underline">988</a> (Suicide &amp; Crisis Lifeline),

@@ -1,4 +1,5 @@
 import { Endorsement } from "lib/content";
+import SectionCircles from "components/SectionCircles";
 
 export default function Endorsements({
   title,
@@ -10,8 +11,11 @@ export default function Endorsements({
   if (items.length === 0) return null;
 
   return (
-    <section className="bg-primary">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+    <section className="relative bg-primary">
+      <div className="hidden md:block">
+        <SectionCircles tint="var(--primary)" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16">
         <h2 className="text-2xl font-semibold text-primary-foreground">
           {title || "Professional Endorsements"}
         </h2>

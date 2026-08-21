@@ -1,4 +1,5 @@
 import { Testimonial } from "lib/content";
+import SectionCircles from "components/SectionCircles";
 
 export default function Testimonials({
   title,
@@ -8,8 +9,11 @@ export default function Testimonials({
   items: Testimonial[];
 }) {
   return (
-    <section className="bg-secondary">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+    <section className="relative bg-secondary">
+      <div className="hidden md:block">
+        <SectionCircles tint="var(--secondary)" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16">
         <h2 className="text-2xl font-semibold text-secondary-foreground">
           {title || "What clients say"}
         </h2>

@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Hero from "components/sections/Hero";
 import Quote from "components/sections/Quote";
 import About from "components/sections/About";
+import Services from "components/sections/Services";
 import Testimonials from "components/sections/Testimonials";
 import Endorsements from "components/sections/Endorsements";
 import FAQ from "components/sections/FAQ";
@@ -10,6 +11,7 @@ import {
   getHomepage,
   getTestimonials,
   getEndorsements,
+  getServices,
   getFAQs,
   getLayout,
   getContactContent,
@@ -19,6 +21,7 @@ export default function HomePage() {
   const homepage = getHomepage();
   const testimonials = getTestimonials();
   const endorsements = getEndorsements();
+  const services = getServices();
   const faqs = getFAQs();
   const layout = getLayout();
   const contactContent = getContactContent();
@@ -44,6 +47,7 @@ export default function HomePage() {
         imageCredit={homepage.aboutImageCredit}
       />
     ),
+    services: <Services title={homepage.servicesTitle} items={services} />,
     testimonials: (
       <Testimonials title={homepage.testimonialsTitle} items={testimonials} />
     ),
@@ -56,8 +60,10 @@ export default function HomePage() {
 
   const enabledSections = layout.sections.filter((s) => s.enabled);
   const elements: ReactNode[] = enabledSections.map((section) => (
-    <div key={section.id} id={section.id}>{sectionComponents[section.id]}</div>
+    <div key={section.id} id={section.id} className="relative z-10">
+      {sectionComponents[section.id]}
+    </div>
   ));
 
-  return <main className="divide-y divide-secondary border-accent">{elements}</main>;
+  return <main>{elements}</main>;
 }

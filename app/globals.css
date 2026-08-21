@@ -1,56 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  /* 60% - Primary (near black) */
-  --primary: #181619;
-  --primary-foreground: #f7f8da;
-
-  /* 30% - Secondary (dark slate) */
-  --secondary: #272a31;
-  --secondary-foreground: #f7f8da;
-
-  /* 10% - Accent (golden amber) */
-  --accent: #a76b09;
+  /* Brand colors — fixed across themes (also mirrored in
+     content/color-presets/warm-rose.json, the active preset) */
+  --primary: #d46d7a; /* old rose */
+  --primary-foreground: #82241f; /* dark rose ink — heading/CTA-label color on the light page */
+  --secondary: #b4cdc2; /* glaucaus green */
+  --secondary-foreground: #2a2724;
+  --accent: #00b49b; /* sea green */
   --accent-foreground: #ffffff;
-  --tertiary: #f7f8da;
-  --tertiary-foreground: #ffffff;
+  --surface: #fdfbf7; /* warm ground — also used as light text on brand-color panels */
+  --surface-foreground: #2a2724;
+  --deep: #eea78c; /* vinaceous cinnamon */
+  --deep-foreground: #2a2724;
 
-  /* Surface (light neutral) & Deep (dark warm) */
-  --surface: #f5f0eb;
-  --surface-foreground: #181619;
-  --deep: #3a3d45;
-  --deep-foreground: #ffffff;
+  /* Dark theme (opt-in via toggle) */
+  --tertiary: #cbb9ae;
+  --tertiary-foreground: #201a18;
+  --background: #201a18;
+  --foreground: #f5ede6;
+  --muted: #3a2f2c;
+  --muted-foreground: #cbb9ae;
+  --border: #4a3a35;
+}
 
-  /* Base theme - dark by default */
-  --background: #181619;
-  --foreground: #ffffff;
-  --muted: #272a31;
-  --muted-foreground: #d0d0d0;
-  --border: #3a3d45;
+/* The "quiet" section background. Plain --background is near-neutral (chroma
+   ~0.006), and since the circles derive their colour from the section they sit
+   on, that made them read as flat grey. A 10% wash of --accent carries enough
+   hue for the circles to pick up while keeping body text above 4.5:1 on every
+   preset. Defined outside :root/.light so it tracks whichever --background is
+   in play. */
+:root,
+.light {
+  --background-tinted: color-mix(in oklab, var(--accent) 10%, var(--background));
 }
 
 .light {
-  --primary: #181619;
-  --primary-foreground: #f5f5f5;
-  --secondary: #272a31;
-  --secondary-foreground: #f5f5f5;
-  --accent: #a76b09;
-  --accent-foreground: #ffffff;
-  --tertiary: #e5e5e5;
-  --tertiary-foreground: #181619;
-  --surface: #f5f0eb;
-  --surface-foreground: #181619;
-  --deep: #3a3d45;
-  --deep-foreground: #ffffff;
-  --background: #f5f5f5;
-  --foreground: #181619;
-  --muted: #e8e8e8;
-  --muted-foreground: #555555;
-  --border: #d0d0d0;
+  --tertiary: #6b625c;
+  --tertiary-foreground: #ffffff;
+  --background: #fdfbf7;
+  --foreground: #2a2724;
+  --muted: #f3ece4;
+  --muted-foreground: #6b625c;
+  --border: #e8e1d9;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-tinted: var(--background-tinted);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -67,14 +64,13 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-sans: var(--font-nunito);
+  --font-sans: var(--font-karla);
 }
 
 body {
-  background: radial-gradient(circle at center, var(--primary), #000000);
-  background-attachment: fixed;
+  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
+  font-family: var(--font-karla), Arial, Helvetica, sans-serif;
 }
 
 .prose-content a {
@@ -118,10 +114,14 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), serif;
+h1 {
+  font-family: var(--font-quattrocento), serif;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.03em;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-newsreader), serif;
 }
 
 .nav-link {
@@ -144,4 +144,43 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link:hover::after {
   transform: scaleX(1);
+}
+
+/* Saturation boost applied to both circle layers. The circles inherit their
+   section's hue, and on the quiet sections that hue is so desaturated it reads
+   as flat grey. Multiplying lifts those; the ceiling stops the already-colourful
+   sections (hero, services) from blowing out — their chroma was already about
+   right, so they land on the cap and stay put. */
+.scroll-circle-fill,
+.scroll-circle-lens {
+  --circle-chroma: 3;
+  --circle-chroma-max: 0.035;
+}
+
+.scroll-circle-fill {
+  /* Shift the section's own color by a fixed perceptual amount so the motif
+     keeps the same slight contrast on every preset and in both themes.
+     round(nearest, l, 1) is 0 below L=0.5 and 1 above, flipping the sign so
+     dark surfaces lighten and light surfaces darken — mixing toward absolute
+     white instead makes contrast an accident of distance from white.
+     Tuning knobs: --circle-shift is the opaque shift, --circle-alpha sets how
+     much of it lands; where the two circles cross they double-composite to
+     roughly 80% of the shift, which is the overlap effect. */
+  --circle-shift: 0.13;
+  --circle-alpha: 0.55;
+  background: oklch(from var(--circle-tint, var(--primary))
+    calc(l + var(--circle-shift) - 2 * var(--circle-shift) * round(nearest, l, 1))
+    min(c * var(--circle-chroma), var(--circle-chroma-max)) h / var(--circle-alpha));
+}
+
+.scroll-circle-lens {
+  /* Where the two circles cross. Letting the overlap emerge from compositing
+     alone caps the lens at 2x the circle's shift (alpha 1-(1-a)^2), which is
+     imperceptible at these subtle shift values — so the lens gets its own
+     opaque step on the same auto-flipping scale. The flip always moves toward
+     mid-lightness, so larger shifts here still can't clip at either end. */
+  --circle-lens-shift: 0.21;
+  background: oklch(from var(--circle-tint, var(--primary))
+    calc(l + var(--circle-lens-shift) - 2 * var(--circle-lens-shift) * round(nearest, l, 1))
+    min(c * var(--circle-chroma), var(--circle-chroma-max)) h);
 }
