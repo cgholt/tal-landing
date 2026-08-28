@@ -8,14 +8,14 @@ import BackgroundImage from "components/BackgroundImage";
 import { LocalBusinessSchema } from "components/StructuredData";
 import NotificationBanner from "components/NotificationBanner";
 import { getSiteConfig, getActiveColorPreset, validHexColor } from "lib/content";
-import { playfair, nunitoSans } from "lib/fonts";
+import { quattrocento, newsreader, fanwoodText, karla } from "lib/fonts";
 import Script from "next/script";
 
-// Script to prevent flash of wrong theme (dark is default)
+// Script to prevent flash of wrong theme (light is default)
 const themeScript = `
   (function() {
     const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
+    if (theme !== 'dark') {
       document.documentElement.classList.add('light');
     }
   })();
@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${nunitoSans.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="en" className={`${quattrocento.variable} ${newsreader.variable} ${fanwoodText.variable} ${karla.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         {googleAdsId && (
           <>

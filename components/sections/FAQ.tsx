@@ -1,4 +1,5 @@
 import { FAQ } from "lib/content";
+import SectionCircles from "components/SectionCircles";
 
 export default function FAQSection({
   title,
@@ -8,8 +9,11 @@ export default function FAQSection({
   items: FAQ[];
 }) {
   return (
-    <section >
-      <div className="mx-auto max-w-3xl px-6 py-16">
+    <section className="relative bg-background-tinted">
+      <div className="hidden md:block">
+        <SectionCircles tint="var(--background-tinted)" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-3xl px-6 py-16">
         <h2 className="text-2xl font-semibold text-primary-foreground">
           {title || "Frequently asked questions"}
         </h2>

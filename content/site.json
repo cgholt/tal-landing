@@ -1,6 +1,6 @@
 {
-  "name": "Your Practice Name",
-  "tagline": "One line on who you help and how — shown in search results and social shares.",
+  "name": "Tal Nesichi, LCSW-S",
+  "tagline": "Relationships, sexuality, and trauma therapy grounded in warm, evidence-based, compassionate care.",
   "email": "hello@example.com",
   "phone": "(555) 555-5555",
   "nav": [
@@ -27,5 +27,5 @@
   ],
   "backgroundImage": "",
   "backgroundOverlay": 10,
-  "activeColorPreset": "default"
+  "activeColorPreset": "juniper-slate"
 }

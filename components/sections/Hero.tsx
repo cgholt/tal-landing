@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { renderTextWithUnderline } from "lib/renderTextWithUnderline";
+import SectionCircles from "components/SectionCircles";
 
 export default function Hero({
   title,
@@ -20,8 +21,15 @@ export default function Hero({
   imagePosition?: string;
 }) {
   return (
-    <section className="relative overflow-hidden">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 md:grid md:grid-cols-2 md:gap-10 md:items-center">
+    <section className="relative bg-primary">
+      <div className="hidden md:block">
+        <SectionCircles tint="var(--primary)" />
+      </div>
+      <div
+        className={`relative z-10 mx-auto max-w-7xl px-6 py-20 ${
+          image ? "md:grid md:grid-cols-2 md:gap-10 md:items-center" : ""
+        }`}
+      >
         {image && (
           <div
             aria-hidden="true"
@@ -55,19 +63,18 @@ export default function Hero({
             </div>
           </div>
         )}
-        <div className="relative text-center space-y-16 md:order-1 md:text-left">
-          <h1
-            className="text-4xl/tighter md:text-6xl font-extrabold tracking-tighter text-primary-foreground"
-            style={{ textTransform: "none" }}
-          >{title}</h1>
+        <div className="relative text-center space-y-8 md:order-1 md:text-left">
+          <h1 className="whitespace-pre-line text-4xl/tight md:text-6xl/tight text-surface">
+            {title}
+          </h1>
           {subtitle && (
-            <p className="text-lg text-tertiary">{subtitle}</p>
+            <p className="font-[family-name:var(--font-fanwood)] text-lg md:text-xl text-surface/85">{subtitle}</p>
           )}
           {ctaText && ctaHref && (
             <div>
               <Link
                 href={ctaHref}
-                className="inline-flex items-center rounded-none bg-accent px-6 py-3 text-accent-foreground font-medium hover:opacity-90 transition"
+                className="inline-flex items-center rounded-md bg-surface px-6 py-3 text-primary-foreground font-bold hover:opacity-90 transition"
               >
                 {ctaText}
               </Link>

@@ -1,7 +1,9 @@
 ---
-question: "What do you offer?"
+question: "What can I expect during the first session?"
 answer: >-
-  Describe your core service here — what you help with, your approach, and who
-  it's best suited for. Edit this in the CMS under FAQs.
-order: 1
+  Our first session is an opportunity to get to know one another. We'll talk
+  about what's bringing you to therapy, your goals, and any questions you have
+  about the process. Together, we'll determine whether we're a good fit and
+  begin creating a plan that feels right for you.
+order: 4
 ---

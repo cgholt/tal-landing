@@ -1,8 +1,8 @@
 ---
 question: "How do I get started?"
 answer: >-
-  Walk a prospective client through the first step — usually a free
-  consultation. Point them to the contact form and set expectations for what
-  happens next.
-order: 7
+  You can reach out through my contact form, email, or phone. I'll schedule a
+  free 15-minute consultation to answer questions and help determine whether
+  we're a good fit.
+order: 9
 ---

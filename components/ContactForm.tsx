@@ -60,7 +60,7 @@ export default function ContactForm({ contactContent }: ContactFormProps) {
     }
   }
 
-  const inputClass = "w-full rounded-none border border-border bg-secondary px-4 py-3 text-secondary-foreground placeholder:text-slate-800 invalid:text-slate-800 focus:outline-none focus:ring-2 focus:ring-accent";
+  const inputClass = "w-full rounded-md border border-border bg-surface px-4 py-3 text-surface-foreground placeholder:text-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
   return (
     <form onSubmit={onSubmit} className="mt-8 space-y-4">
@@ -117,7 +117,7 @@ export default function ContactForm({ contactContent }: ContactFormProps) {
       />
 
       {/* Safety notice with acknowledgment */}
-      <div className="rounded-none border border-border bg-secondary/50 p-4">
+      <div className="rounded-md border border-border bg-muted p-4">
         <h3 className="text-sm font-semibold text-primary-foreground">
           {contactContent.safetyNoticeTitle}
         </h3>
@@ -129,9 +129,9 @@ export default function ContactForm({ contactContent }: ContactFormProps) {
             type="checkbox"
             checked={acknowledged}
             onChange={(e) => setAcknowledged(e.target.checked)}
-            className="mt-0.5 h-4 w-4 rounded border-border bg-secondary accent-accent cursor-pointer"
+            className="mt-0.5 h-4 w-4 rounded border-border bg-surface accent-accent cursor-pointer"
           />
-          <span className="text-sm text-secondary-foreground">
+          <span className="text-sm text-surface-foreground">
             I acknowledge that I have read and understand this notice *
           </span>
         </label>
@@ -150,9 +150,9 @@ export default function ContactForm({ contactContent }: ContactFormProps) {
       <button
         type="submit"
         disabled={status === "loading" || !acknowledged}
-        className="rounded-none bg-accent px-6 py-3 text-accent-foreground font-medium hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        className="rounded-md bg-primary-foreground px-6 py-3 text-surface font-bold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {status === "loading" ? "Sending..." : "Send"}
+        {status === "loading" ? "Sending..." : "Send message"}
       </button>
       {status === "ok" && (
         <p className="text-green-400">Thanks—I&apos;ll be in touch soon.</p>

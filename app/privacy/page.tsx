@@ -12,10 +12,10 @@ export default function PrivacyPage() {
   return (
     <main className="bg-primary">
       <div className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-3xl font-bold text-primary-foreground">
+        <h1 className="text-3xl font-bold text-surface">
           {privacy.title}
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-surface/70">
           Last updated: {new Date(privacy.lastUpdated).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           })}
         </p>
         <div
-          className="prose-content mt-8 prose prose-invert prose-headings:text-primary-foreground prose-p:text-tertiary prose-a:text-accent prose-strong:text-primary-foreground max-w-none"
+          className="prose-content mt-8 prose prose-invert prose-headings:text-surface prose-p:text-surface/85 prose-a:text-accent prose-strong:text-surface max-w-none"
           dangerouslySetInnerHTML={{ __html: privacy.content }}
         />
       </div>

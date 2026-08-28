@@ -49,6 +49,7 @@ function cached<T>(key: string, loader: () => T): T {
 
 // Types
 export type Homepage = {
+  heroEyebrow?: string;
   heroTitle: string;
   heroSubtitle: string;
   heroCtaText: string;
@@ -56,10 +57,12 @@ export type Homepage = {
   heroImage: string | null;
   heroImageCredit?: string;
   heroImagePosition?: string;
+  heroBackgroundImage?: string | null;
   aboutTitle: string;
   aboutContent: string;
   aboutImage: string | null;
   aboutImageCredit?: string;
+  servicesTitle?: string;
   testimonialsTitle: string;
   faqsTitle: string;
   quoteText?: string;
@@ -70,6 +73,14 @@ export type Homepage = {
 export type Testimonial = {
   name: string;
   quote: string;
+  order: number;
+};
+
+export type Service = {
+  title: string;
+  blurb: string;
+  duration: string;
+  price: string;
   order: number;
 };
 
@@ -183,6 +194,18 @@ export function getTestimonials(): Testimonial[] {
         }
         return JSON.parse(fs.readFileSync(filePath, "utf-8"));
       })
+      .sort((a, b) => a.order - b.order);
+  });
+}
+
+export function getServices(): Service[] {
+  return cached("services", () => {
+    const dir = path.join(contentDir, "services");
+    if (!fs.existsSync(dir)) return [];
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
+
+    return files
+      .map((file) => JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")))
       .sort((a, b) => a.order - b.order);
   });
 }

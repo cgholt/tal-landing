@@ -1,7 +1,7 @@
 ---
-question: "How often do we meet?"
+question: "How often will we meet?"
 answer: >-
-  Describe your typical cadence (for example, weekly to start) and how that may
-  change over time based on a client's needs and goals.
+  Most clients begin with weekly sessions. As therapy progresses, we'll
+  regularly discuss what frequency best supports your goals.
 order: 5
 ---

@@ -20,11 +20,11 @@ export function useTheme() {
 }
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
+  if (typeof window === "undefined") return "light";
   const stored = localStorage.getItem("theme") as Theme | null;
   if (stored) return stored;
-  // Default to dark
-  return "dark";
+  // Default to light
+  return "light";
 }
 
 function subscribe(callback: () => void) {
@@ -39,7 +39,7 @@ function getSnapshot(): Theme {
 }
 
 function getServerSnapshot(): Theme {
-  return "dark";
+  return "light";
 }
 
 export default function ThemeProvider({
