@@ -49,6 +49,7 @@ function cached<T>(key: string, loader: () => T): T {
 
 // Types
 export type Homepage = {
+  heroEyebrow?: string;
   heroTitle: string;
   heroSubtitle: string;
   heroCtaText: string;
@@ -56,6 +57,7 @@ export type Homepage = {
   heroImage: string | null;
   heroImageCredit?: string;
   heroImagePosition?: string;
+  heroBackgroundImage?: string | null;
   aboutTitle: string;
   aboutContent: string;
   aboutImage: string | null;

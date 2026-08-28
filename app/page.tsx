@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Hero from "components/sections/Hero";
+import Hero from "components/sections/HeroPortrait";
 import Quote from "components/sections/Quote";
 import About from "components/sections/About";
 import Services from "components/sections/Services";
@@ -29,13 +29,13 @@ export default function HomePage() {
   const sectionComponents: Record<string, ReactNode> = {
     hero: (
       <Hero
+        eyebrow={homepage.heroEyebrow}
         title={homepage.heroTitle}
         subtitle={homepage.heroSubtitle}
         ctaText={homepage.heroCtaText}
         ctaHref={homepage.heroCtaHref}
-        image={homepage.heroImage}
-        imageCredit={homepage.heroImageCredit}
-        imagePosition={homepage.heroImagePosition}
+        backgroundImage={homepage.heroBackgroundImage}
+        portraitImage={homepage.heroImage}
       />
     ),
     quote: <Quote text={homepage.quoteText} author={homepage.quoteAuthor} highlight={homepage.quoteHighlight} />,

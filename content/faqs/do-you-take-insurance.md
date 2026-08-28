@@ -1,7 +1,9 @@
 ---
-question: "Do you take insurance?"
+question: "Do you accept insurance?"
 answer: >-
-  Explain your insurance policy — whether you're in-network, offer superbills
-  for out-of-network reimbursement, or are private-pay only.
-order: 4
+  I am an out-of-network provider and do not bill insurance directly. Upon
+  request, I can provide a superbill that you may submit to your insurance
+  company for possible reimbursement. I recommend contacting your insurance
+  provider to learn more about your out-of-network benefits.
+order: 1
 ---

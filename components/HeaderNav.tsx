@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { SiteConfig } from "lib/content";
-import NavCircles from "components/NavCircles";
+import NavCircles, { NAV_CIRCLES_SIZE_CSS } from "components/NavCircles";
 
 export default function HeaderNav({
   siteConfig,
@@ -28,11 +28,14 @@ export default function HeaderNav({
 
   return (
     <div>
-      <div className="relative overflow-hidden">
+      <div
+        className="relative overflow-hidden flex items-center"
+        style={{ minHeight: NAV_CIRCLES_SIZE_CSS }}
+      >
         <div className="md:hidden">
           <NavCircles />
         </div>
-        <div className="relative z-10 flex items-center justify-between gap-3">
+        <div className="relative z-10 flex w-full items-center justify-between gap-3">
           <div className="text-left">
             <Link
               href="/"
@@ -40,7 +43,7 @@ export default function HeaderNav({
             >
               {siteConfig.name}
             </Link>
-            {(siteConfig.email || siteConfig.phone) && (
+            {false && (siteConfig.email || siteConfig.phone) && (
               <div className="flex gap-3 mt-1 text-xs text-surface/80">
                 {siteConfig.email && (
                   <a href={`mailto:${siteConfig.email}`} className="hover:text-surface transition">

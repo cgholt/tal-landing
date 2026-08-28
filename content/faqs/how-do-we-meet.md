@@ -1,7 +1,7 @@
 ---
-question: "How do we meet — in person or online?"
+question: "Do you offer virtual sessions?"
 answer: >-
-  Explain where you see clients (city/region) and whether you offer virtual
-  sessions, plus any location or licensing details.
-order: 2
+  Yes. I offer secure telehealth sessions for clients located anywhere in
+  Texas, as well as in-person appointments in Bryan/College Station.
+order: 3
 ---
