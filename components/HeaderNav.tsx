@@ -43,6 +43,15 @@ export default function HeaderNav({
             >
               {siteConfig.name}
             </Link>
+            <div className="flex flex-col text-xs text-surface/80 md:flex-row md:items-center md:gap-2">
+              <a href={`mailto:${siteConfig.email}`} className="hover:text-surface transition">
+                {siteConfig.email}
+              </a>
+              <span className="hidden md:inline">·</span>
+              <a href={`tel:${siteConfig.phone}`} className="hover:text-surface transition">
+                {siteConfig.phone}
+              </a>
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-6">
