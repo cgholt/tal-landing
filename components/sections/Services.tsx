@@ -2,10 +2,6 @@ import Link from "next/link";
 import { Service } from "lib/content";
 import SectionCircles from "components/SectionCircles";
 
-function slugify(title: string) {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-}
-
 export default function Services({
   title,
   items,
@@ -28,7 +24,7 @@ export default function Services({
           {items.map((service) => (
             <Link
               key={service.title}
-              href={`/services/${slugify(service.title)}`}
+              href={`/services/${service.slug}`}
               className="block rounded-xl border border-border bg-surface p-8 transition-transform duration-200 hover:scale-[1.02]"
             >
               <h3 className="text-xl font-bold text-surface-foreground">{service.title}</h3>

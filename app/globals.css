@@ -85,7 +85,10 @@ body {
 .prose-content h1,
 .prose-content h2,
 .prose-content h3 {
-  color: var(--primary-foreground);
+  /* No color here: heading color is inherited from whatever text-color
+     utility the caller puts on the .prose-content wrapper, since callers
+     sit on backgrounds with opposite contrast needs (light panel in
+     About.tsx vs. dark bg-primary in privacy/services pages). */
   font-weight: 600;
   font-size: 1.25rem;
   margin-top: 0;

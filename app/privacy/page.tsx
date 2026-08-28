@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           })}
         </p>
         <div
-          className="prose-content mt-8 prose prose-invert prose-headings:text-surface prose-p:text-surface/85 prose-a:text-accent prose-strong:text-surface max-w-none"
+          className="prose-content mt-8 max-w-none text-surface/85 leading-relaxed [&_h1]:text-surface [&_h2]:text-surface [&_h3]:text-surface [&_strong]:text-surface"
           dangerouslySetInnerHTML={{ __html: privacy.content }}
         />
       </div>

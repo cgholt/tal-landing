@@ -78,11 +78,15 @@ export type Testimonial = {
 
 export type Service = {
   title: string;
+  slug: string;
   blurb: string;
-  duration: string;
-  price: string;
   order: number;
+  content: string;
 };
+
+export function slugify(title: string): string {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
 
 export type FAQ = {
   question: string;
@@ -202,12 +206,23 @@ export function getServices(): Service[] {
   return cached("services", () => {
     const dir = path.join(contentDir, "services");
     if (!fs.existsSync(dir)) return [];
-    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
 
     return files
-      .map((file) => JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")))
+      .map((file) => {
+        const { data, content } = matter(fs.readFileSync(path.join(dir, file), "utf-8"));
+        return {
+          ...data,
+          slug: slugify(data.title),
+          content: safeMarkdown(content),
+        } as Service;
+      })
       .sort((a, b) => a.order - b.order);
   });
+}
+
+export function getServiceBySlug(slug: string): Service | undefined {
+  return getServices().find((s) => s.slug === slug);
 }
 
 export function getFAQs(): FAQ[] {
