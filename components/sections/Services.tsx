@@ -21,10 +21,7 @@ export default function Services({
         <SectionCircles tint="var(--secondary)" />
       </div>
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-16">
-        <p className="text-xs font-bold tracking-widest text-secondary-foreground text-center uppercase">
-          Services
-        </p>
-        <h2 className="mt-2 text-3xl md:text-4xl text-secondary-foreground text-center">
+        <h2 className="text-3xl md:text-4xl text-secondary-foreground text-center">
           {title || "Ways we can work together"}
         </h2>
         <div className="mt-10 grid md:grid-cols-3 gap-7">
