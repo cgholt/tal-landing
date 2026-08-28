@@ -43,20 +43,6 @@ export default function HeaderNav({
             >
               {siteConfig.name}
             </Link>
-            {false && (siteConfig.email || siteConfig.phone) && (
-              <div className="flex gap-3 mt-1 text-xs text-surface/80">
-                {siteConfig.email && (
-                  <a href={`mailto:${siteConfig.email}`} className="hover:text-surface transition">
-                    {siteConfig.email}
-                  </a>
-                )}
-                {siteConfig.phone && (
-                  <a href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`} className="hover:text-surface transition">
-                    {siteConfig.phone}
-                  </a>
-                )}
-              </div>
-            )}
           </div>
 
           <div className="hidden md:flex items-center gap-6">
