@@ -1,10 +1,11 @@
 backend:
   name: github
-  # TODO: point these at the client's repo and deployed site URL.
-  repo: your-github-username/your-repo
+  repo: cgholt/tal-landing
   branch: main
-  base_url: https://your-domain.example
+  base_url: https://talnesichi.com
   auth_endpoint: api/auth
+
+local_backend: true
 
 media_folder: public/images
 public_folder: /images
