@@ -2,7 +2,7 @@ backend:
   name: github
   repo: cgholt/tal-landing
   branch: main
-  base_url: https://talnesichi.com
+  base_url: https://www.talnesichi.com
   auth_endpoint: api/auth
 
 local_backend: true
