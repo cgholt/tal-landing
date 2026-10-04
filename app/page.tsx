@@ -36,12 +36,14 @@ export default function HomePage() {
         ctaHref={homepage.heroCtaHref}
         backgroundImage={homepage.heroBackgroundImage}
         portraitImage={homepage.heroImage}
+        portraitImagePosition={homepage.heroImagePosition}
       />
     ),
     quote: <Quote text={homepage.quoteText} author={homepage.quoteAuthor} highlight={homepage.quoteHighlight} />,
     about: (
       <About
         title={homepage.aboutTitle}
+        subtitle={homepage.aboutSubtitle}
         content={homepage.aboutContent}
         image={homepage.aboutImage}
         imageCredit={homepage.aboutImageCredit}

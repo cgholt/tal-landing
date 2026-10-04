@@ -1,13 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import SectionCircles from "components/SectionCircles";
 
 export default function About({
   title,
+  subtitle,
   content,
   image,
   imageCredit,
 }: {
   title?: string;
+  subtitle?: string;
   content: string;
   image?: string | null;
   imageCredit?: string;
@@ -41,11 +44,22 @@ export default function About({
             <h2 className="text-3xl text-primary-foreground">
               {title || "About Me"}
             </h2>
+            {subtitle && (
+              <p className="mt-2 text-tertiary">{subtitle}</p>
+            )}
             <div className="mt-3 h-1 w-16 bg-primary rounded" />
             <div
               className="prose-content mt-6 text-tertiary leading-relaxed space-y-4 [&_p]:mb-4"
               dangerouslySetInnerHTML={{ __html: content }}
             />
+            <div className="mt-6">
+              <Link
+                href="/philosophy"
+                className="inline-flex items-center rounded-md border-2 border-primary-foreground bg-surface px-6 py-3 text-primary-foreground font-bold hover:opacity-90 transition"
+              >
+                Learn more about Tal
+              </Link>
+            </div>
           </div>
         </div>
       </div>

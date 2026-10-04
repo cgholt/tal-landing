@@ -1,0 +1,50 @@
+{
+  "eyebrow": "Speaking Engagements",
+  "title": "Speaking & Teaching",
+  "subtitle": "Clinical education for the conversations therapists aren't always trained to have.",
+  "introContent": "Sexuality, relationships, trauma, and intimacy show up in clinical practice every day—but clinicians don't always receive the training or language to talk about them comfortably and effectively.\n\nI speak and teach on sexuality, relationships, couples therapy, trauma, and clinical practice, with a particular interest in the places where these topics intersect.\n\nMy approach is clinically grounded, practical, and conversational. I want clinicians to leave a presentation with more than information—I want them to feel more confident bringing these conversations into the therapy room.",
+
+  "upcomingTitle": "Upcoming",
+  "upcoming": [
+    { "organization": "Brazos Valley Psychological Association", "date": "February 2027", "title": "Sexuality in Clinical Practice: A Sex Therapist's Guide to Assessment, Formulation, and Intervention", "description": "A continuing education presentation exploring how clinicians can confidently initiate conversations about sexuality, conduct a thoughtful sexual assessment, develop a clinical formulation, and determine appropriate interventions." }
+  ],
+
+  "experienceTitle": "Clinical Education & Teaching Experience",
+  "experience": [
+    { "organization": "Texas A&M University — Department of Psychiatry", "role": "Clinical Social Work Supervisor & Clinical Social Worker", "dateRange": "2022–2026", "description": "Education was an integral part of my clinical role within the Department of Psychiatry. I developed and delivered didactic presentations for LMSWs, LPCs, medical residents, and other clinicians on sexuality, relationships, trauma, couples therapy, sex therapy, and clinical practice.\n\nI also provided clinical supervision and mentorship to beginning clinicians, including MSW students and LMSWs working toward independent licensure, supporting their clinical development and helping them build confidence and competence as therapists.\n\nIn addition to teaching and supervision, my role included clinical consultation, interdisciplinary education, and program development." },
+    { "organization": "Tarleton State University", "role": "Adjunct Instructor", "dateRange": "2025", "description": "Taught Practice I to BSW students, focusing on foundational clinical skills, ethical practice, therapeutic engagement, and beginning clinical development." }
+  ],
+
+  "engagementsTitle": "Selected Speaking & Teaching Engagements",
+  "engagements": [
+    { "organization": "Texas State University", "program": "Professional Counseling Program", "dateRange": "2022–2023", "title": "Ethical Non-Monogamy: A Guide for Clinicians", "description": "A clinical introduction to consensual non-monogamy, common clinical considerations, and approaching diverse relationship structures without imposing assumptions about what relationships should look like." },
+    { "organization": "University of North Texas at Dallas", "program": "Clinical Mental Health Counseling Program", "dateRange": "2026", "title": "Sex Therapy 101: Common Sexual Concerns", "description": "An introduction to common sexual concerns encountered in clinical practice, including desire discrepancy, low desire, arousal and orgasm concerns, sexual pain, and other barriers to sexual wellbeing." },
+    { "organization": "Adler University", "program": "Sex Therapy Certificate Program", "dateRange": "2026", "title": "Couples & Sex Therapy: Clinical Case Presentation", "description": "A clinical case presentation exploring the intersection of relationship dynamics, couples therapy, and sexual concerns." }
+  ],
+
+  "topicsTitle": "Selected Topics",
+  "topics": [
+    { "title": "Sexuality in Clinical Practice", "description": "How to talk about sex with clients, initiate conversations about sexuality, conduct a sexual history, and create a clinical environment where sexuality doesn't become the elephant in the room." },
+    { "title": "Sex Therapy 101: Common Sexual Concerns", "description": "Understanding desire discrepancy, low desire, arousal and orgasm difficulties, sexual pain, performance concerns, and other common sexual concerns." },
+    { "title": "Desire & Desire Discrepancy", "description": "Understanding the individual and relational dynamics behind mismatched desire and helping couples move beyond the cycle of pressure, avoidance, rejection, and resentment." },
+    { "title": "Ethical Non-Monogamy & Alternative Relationships", "description": "Understanding consensual non-monogamy, polyamory, open relationships, and other relationship structures—and developing a culturally responsive clinical approach without assuming monogamy is the goal." },
+    { "title": "Couples & Sex Therapy", "description": "Exploring the intersection of attachment, communication, conflict, desire, intimacy, and sexuality in couples work." },
+    { "title": "Sexuality & Trauma", "description": "Understanding how trauma can affect the body, relationships, desire, intimacy, sexual functioning, and one's relationship with sexuality." },
+    { "title": "Sexuality, Relationships & the Cultural Lens", "description": "Examining the assumptions clinicians bring into the therapy room about gender, relationships, sexuality, marriage, and what a \"healthy\" relationship is supposed to look like." }
+  ],
+
+  "formatsTitle": "Formats I Offer",
+  "formats": [
+    { "title": "Continuing Education Presentations", "description": "Clinically focused presentations for mental health professionals and professional associations." },
+    { "title": "University & Graduate Programs", "description": "Guest lectures and educational sessions for social work, counseling, sex therapy, and related programs." },
+    { "title": "Medical Education", "description": "Didactics and interdisciplinary education for medical residents and healthcare professionals." },
+    { "title": "Workshops & Trainings", "description": "Interactive education tailored to the needs and experience level of your audience." },
+    { "title": "Panels & Podcasts", "description": "Conversations about sexuality, relationships, trauma, and the questions clinicians and communities are often hesitant to ask." }
+  ],
+  "formatsNote": "Presentations can be adapted for different audiences, professional disciplines, and timeframes.",
+
+  "closingTitle": "Interested in Having Me Speak?",
+  "closingContent": "Whether you're planning a continuing education program, university lecture, professional training, panel, or podcast, I'd love to hear what you're working on.",
+  "closingCtaText": "Get in touch",
+  "closingCtaHref": "/#contact"
+}

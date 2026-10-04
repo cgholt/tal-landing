@@ -1,5 +1,5 @@
 ---
-title: "Couples therapy"
+title: "Relationships & Couples therapy"
 blurb: "Helping partners move from conflict and disconnection toward emotional safety, trust, and lasting intimacy."
 order: 2
 ---

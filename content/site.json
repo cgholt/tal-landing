@@ -20,6 +20,11 @@
       "enabled": true
     },
     {
+      "label": "Speaking Engagements",
+      "href": "/speaking-engagements",
+      "enabled": true
+    },
+    {
       "label": "Contact",
       "href": "/#contact",
       "enabled": true
