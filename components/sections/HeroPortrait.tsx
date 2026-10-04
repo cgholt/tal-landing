@@ -12,6 +12,7 @@ export default function HeroPortrait({
   backgroundImageAlt = "",
   portraitImage,
   portraitImageAlt = "",
+  portraitImagePosition = "center",
 }: {
   eyebrow?: string;
   title: string;
@@ -22,6 +23,7 @@ export default function HeroPortrait({
   backgroundImageAlt?: string;
   portraitImage?: string | null;
   portraitImageAlt?: string;
+  portraitImagePosition?: string;
 }) {
   const hasCollage = backgroundImage || portraitImage;
 
@@ -52,6 +54,7 @@ export default function HeroPortrait({
                   fill
                   sizes="(max-width: 768px) 60vw, 30vw"
                   className="object-cover"
+                  style={{ objectPosition: portraitImagePosition }}
                   priority
                   fetchPriority="high"
                 />

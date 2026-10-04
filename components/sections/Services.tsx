@@ -43,6 +43,27 @@ export default function Services({
               </div>
             </Link>
           ))}
+          <Link
+            href="/speaking-engagements"
+            className="block rounded-xl border border-border bg-surface p-8 transition-transform duration-200 hover:scale-[1.02]"
+          >
+            <h3 className="text-xl font-bold text-surface-foreground">Speaking Engagements</h3>
+            <p className="mt-3 text-tertiary leading-relaxed">
+              Looking to have me speak or teach? See my past and upcoming speaking engagements.
+            </p>
+            <div className="mt-5 flex justify-end">
+              <svg
+                className="h-5 w-5 text-primary-foreground"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

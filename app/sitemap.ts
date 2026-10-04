@@ -8,5 +8,11 @@ export default function sitemap() {
       changeFrequency: "weekly" as const,
       priority: 1,
     },
+    {
+      url: `${baseUrl}/speaking-engagements`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
   ];
 }

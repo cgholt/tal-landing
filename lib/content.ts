@@ -59,6 +59,7 @@ export type Homepage = {
   heroImagePosition?: string;
   heroBackgroundImage?: string | null;
   aboutTitle: string;
+  aboutSubtitle?: string;
   aboutContent: string;
   aboutImage: string | null;
   aboutImageCredit?: string;
@@ -136,6 +137,11 @@ export type Layout = {
 export type PrivacyPolicy = {
   title: string;
   lastUpdated: string;
+  content: string;
+};
+
+export type Philosophy = {
+  title: string;
   content: string;
 };
 
@@ -312,6 +318,56 @@ export function getPrivacyPolicy(): PrivacyPolicy {
     return {
       ...content,
       content: safeMarkdown(content.content),
+    };
+  });
+}
+
+export function getPhilosophy(): Philosophy {
+  return cached("philosophy", () => {
+    const filePath = path.join(contentDir, "philosophy.json");
+    const content = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    return {
+      ...content,
+      content: safeMarkdown(content.content),
+    };
+  });
+}
+
+export type SpeakingUpcomingItem = { organization: string; date: string; title: string; description: string };
+export type SpeakingExperienceItem = { organization: string; role: string; dateRange: string; description: string };
+export type SpeakingEngagementItem = { organization: string; program: string; dateRange: string; title: string; description: string };
+export type SpeakingTopicItem = { title: string; description: string };
+export type SpeakingFormatItem = { title: string; description: string };
+
+export type SpeakingPage = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  introContent: string;
+  upcomingTitle: string;
+  upcoming: SpeakingUpcomingItem[];
+  experienceTitle: string;
+  experience: SpeakingExperienceItem[];
+  engagementsTitle: string;
+  engagements: SpeakingEngagementItem[];
+  topicsTitle: string;
+  topics: SpeakingTopicItem[];
+  formatsTitle: string;
+  formats: SpeakingFormatItem[];
+  formatsNote: string;
+  closingTitle: string;
+  closingContent: string;
+  closingCtaText: string;
+  closingCtaHref: string;
+};
+
+export function getSpeakingPage(): SpeakingPage {
+  return cached("speaking", () => {
+    const filePath = path.join(contentDir, "speaking.json");
+    const content = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    return {
+      ...content,
+      introContent: safeMarkdown(content.introContent),
     };
   });
 }

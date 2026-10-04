@@ -38,7 +38,7 @@ collections:
               name: heroImagePosition,
               label: Hero Image Focal Point,
               widget: select,
-              options: ["top", "center", "bottom"],
+              options: ["top", "center", "bottom", "left", "right"],
               default: "center",
               required: false,
               hint: "Controls which part of the image stays visible when cropped",
@@ -47,6 +47,7 @@ collections:
           - { name: quoteAuthor, label: Quote Attribution, widget: string, required: false, hint: "e.g., 'Socrates'" }
           - { name: quoteHighlight, label: Quote Highlight Word, widget: string, required: false, hint: "A single word in the quote to underline with the brush decoration. Leave blank for no highlight." }
           - { name: aboutTitle, label: About Title, widget: string }
+          - { name: aboutSubtitle, label: About Subtitle, widget: string, required: false }
           - { name: aboutContent, label: About Content, widget: markdown }
           - {
               name: aboutImage,
@@ -194,3 +195,84 @@ collections:
           - { name: title, label: Page Title, widget: string }
           - { name: lastUpdated, label: Last Updated, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
           - { name: content, label: Content, widget: markdown }
+      - name: philosophy
+        label: Philosophy Page
+        file: content/philosophy.json
+        fields:
+          - { name: title, label: Page Title, widget: string }
+          - { name: content, label: Content, widget: markdown }
+
+  - name: speaking
+    label: Speaking Engagements Page
+    files:
+      - name: speaking-page
+        label: Speaking Engagements
+        file: content/speaking.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: title, label: Page Title, widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: introContent, label: Intro, widget: markdown }
+
+          - { name: upcomingTitle, label: "Upcoming Section Title", widget: string, default: Upcoming }
+          - name: upcoming
+            label: Upcoming Engagements
+            label_singular: Upcoming Engagement
+            widget: list
+            summary: "{{fields.organization}} — {{fields.date}}"
+            fields:
+              - { name: organization, label: Organization, widget: string }
+              - { name: date, label: Date, widget: string }
+              - { name: title, label: Presentation Title, widget: string }
+              - { name: description, label: Description, widget: text }
+
+          - { name: experienceTitle, label: Experience Section Title, widget: string, default: "Clinical Education & Teaching Experience" }
+          - name: experience
+            label: Teaching Experience
+            label_singular: Experience Entry
+            widget: list
+            summary: "{{fields.organization}}"
+            fields:
+              - { name: organization, label: Organization, widget: string }
+              - { name: role, label: Role, widget: string }
+              - { name: dateRange, label: Date Range, widget: string }
+              - { name: description, label: Description, widget: text }
+
+          - { name: engagementsTitle, label: Engagements Section Title, widget: string, default: "Selected Speaking & Teaching Engagements" }
+          - name: engagements
+            label: Selected Engagements
+            label_singular: Engagement
+            widget: list
+            summary: "{{fields.organization}} — {{fields.title}}"
+            fields:
+              - { name: organization, label: Organization, widget: string }
+              - { name: program, label: Program, widget: string }
+              - { name: dateRange, label: Date Range, widget: string }
+              - { name: title, label: Presentation Title, widget: string }
+              - { name: description, label: Description, widget: text }
+
+          - { name: topicsTitle, label: Topics Section Title, widget: string, default: "Selected Topics" }
+          - name: topics
+            label: Topics
+            label_singular: Topic
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Topic Title, widget: string }
+              - { name: description, label: Description, widget: text }
+
+          - { name: formatsTitle, label: Formats Section Title, widget: string, default: "Formats I Offer" }
+          - name: formats
+            label: Formats
+            label_singular: Format
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Format Title, widget: string }
+              - { name: description, label: Description, widget: text }
+          - { name: formatsNote, label: Formats Closing Note, widget: text }
+
+          - { name: closingTitle, label: Closing Title, widget: string }
+          - { name: closingContent, label: Closing Content, widget: text }
+          - { name: closingCtaText, label: Closing Button Text, widget: string, default: "Get in touch" }
+          - { name: closingCtaHref, label: Closing Button Link, widget: string, default: "/#contact" }
