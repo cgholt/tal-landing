@@ -93,6 +93,7 @@ body {
   font-size: 1.25rem;
   margin-top: 0;
   margin-bottom: 0.75rem;
+  scroll-margin-top: 6rem;
 }
 
 .prose-content p {

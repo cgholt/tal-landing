@@ -140,9 +140,12 @@ export type PrivacyPolicy = {
   content: string;
 };
 
+export type PhilosophySection = { title: string; slug: string };
+
 export type Philosophy = {
   title: string;
   content: string;
+  sections: PhilosophySection[];
 };
 
 export type ContactContent = {
@@ -325,11 +328,14 @@ export function getPrivacyPolicy(): PrivacyPolicy {
 export function getPhilosophy(): Philosophy {
   return cached("philosophy", () => {
     const filePath = path.join(contentDir, "philosophy.json");
-    const content = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    return {
-      ...content,
-      content: safeMarkdown(content.content),
-    };
+    const raw = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    const sections: PhilosophySection[] = [];
+    const content = safeMarkdown(raw.content).replace(/<h2>(.*?)<\/h2>/g, (_match, title) => {
+      const slug = slugify(title);
+      sections.push({ title, slug });
+      return `<h2 id="${slug}">${title}</h2>`;
+    });
+    return { ...raw, content, sections };
   });
 }
 
