@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Step 1 of the Decap CMS GitHub login: /admin opens this route in a popup and
+// we bounce to GitHub. GitHub then calls back to ./callback. The OAuth app's
+// callback URL must be exactly <SITE_URL>/api/auth/callback.
 export async function GET(req: NextRequest) {
   const clientId = process.env.OAUTH_GITHUB_CLIENT_ID;
 
@@ -8,6 +11,7 @@ export async function GET(req: NextRequest) {
   }
 
   const redirectUri = `${req.nextUrl.origin}/api/auth/callback`;
+  // "repo" lets Decap commit content to the (private) repo.
   const scope = "repo,user";
 
   const authUrl = new URL("https://github.com/login/oauth/authorize");

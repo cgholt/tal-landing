@@ -19,7 +19,8 @@ consultant, etc.). See `TEMPLATE.md` for the per-client setup checklist.
 ## Architecture
 
 This is a **Next.js 16 App Router** site built as a single scrolling homepage
-(plus a standalone `/privacy` page). It uses Tailwind CSS v4, TypeScript, and a
+plus standalone pages: `/privacy`, `/philosophy`, `/speaking-engagements`, and
+`/services/[slug]`. It uses Tailwind CSS v4, TypeScript, and a
 file-based CMS content system.
 
 ### Content System (CMS-driven)

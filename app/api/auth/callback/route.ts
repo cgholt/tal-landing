@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Step 2: swap GitHub's one-time code for an access token, then hand it to the
+// Decap CMS window that opened this popup via the postMessage handshake Decap
+// expects ("authorizing:github" -> "authorization:github:success:...").
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get("code");
 
