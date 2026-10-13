@@ -18,6 +18,17 @@ In short:
 3. Replace everything in `content/` and `public/images/`.
 4. Point `public/admin/config.yml` at the client's repo + deployed URL.
 
+## Live site: talnesichi.com
+
+This repo is also the production site, deployed on Vercel. Merging to `main`
+auto-deploys; every PR gets a preview URL. Env vars live in Vercel (names in
+`.env.example`). The client edits content at `/admin`, which commits to `main`.
+Account ownership and transfer notes are kept outside the repo, in the private
+handover doc, so no credentials or account details live in git.
+
+Pages beyond the homepage: `/privacy`, `/philosophy`, `/speaking-engagements`,
+and `/services/[slug]` (content in `content/`).
+
 ## Development
 
 ```bash
@@ -27,6 +38,15 @@ npm run build      # production build
 npm run lint       # ESLint
 npm run test:run   # Vitest (single run)
 npm run cms        # local Decap CMS editor (no OAuth)
+```
+
+Requires the Node version in `.nvmrc`. Image optimization needs Python +
+Pillow (`pip install Pillow`). The pre-commit hook is **not** installed by
+`npm install`; enable it once per clone:
+
+```bash
+printf '#!/bin/sh\npython3 scripts/optimize-images.py\n' > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
 ```
 
 ## Architecture

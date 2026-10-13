@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-// Rate limiting store (per-instance, resets on cold start)
+// Rate limiting store (per-instance, resets on cold start). On Vercel each
+// serverless instance has its own copy, so this is best-effort, not a hard cap.
+// ponytail: swap for Upstash/Vercel KV if spam ever gets through.
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_MAX = 5; // Max requests per window
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in ms
