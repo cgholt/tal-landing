@@ -15,13 +15,18 @@
       "enabled": true
     },
     {
-      "label": "FAQs",
-      "href": "/#faq",
-      "enabled": true
+      "enabled": true,
+      "label": "My Philosophy",
+      "href": "/philosophy"
     },
     {
       "label": "Speaking Engagements",
       "href": "/speaking-engagements",
+      "enabled": true
+    },
+    {
+      "label": "FAQs",
+      "href": "/#faq",
       "enabled": true
     },
     {
