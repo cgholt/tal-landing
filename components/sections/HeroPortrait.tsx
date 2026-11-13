@@ -8,6 +8,8 @@ export default function HeroPortrait({
   subtitle,
   ctaText,
   ctaHref,
+  ctaLinkText,
+  ctaLinkHref,
   backgroundImage,
   backgroundImageAlt = "",
   portraitImage,
@@ -19,6 +21,8 @@ export default function HeroPortrait({
   subtitle?: string;
   ctaText?: string;
   ctaHref?: string;
+  ctaLinkText?: string;
+  ctaLinkHref?: string;
   backgroundImage?: string | null;
   backgroundImageAlt?: string;
   portraitImage?: string | null;
@@ -85,6 +89,19 @@ export default function HeroPortrait({
                 {ctaText}
               </Link>
             </div>
+          )}
+          {ctaLinkText && ctaLinkHref && (
+              <div>
+                <Link
+                    href={ctaLinkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-[family-name:var(--font-fanwood)] text-lg md:text-xl text-surface/85 underline"
+                >
+                  {ctaLinkText}
+                </Link>
+                <text className="font-[family-name:var(--font-fanwood)] text-lg md:text-xl text-surface/85"> ↗︎</text>
+              </div>
           )}
         </div>
       </div>

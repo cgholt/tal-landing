@@ -54,6 +54,8 @@ export type Homepage = {
   heroSubtitle: string;
   heroCtaText: string;
   heroCtaHref: string;
+  heroCtaLinkText: string;
+  heroCtaLinkHref: string;
   heroImage: string | null;
   heroImageCredit?: string;
   heroImagePosition?: string;

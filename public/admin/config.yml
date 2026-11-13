@@ -27,6 +27,13 @@ collections:
               widget: string,
               default: "/#contact",
             }
+          - { name: heroCtaLinkText, label: Link Text, widget: string }
+          - {
+            name: heroCtaLinkHref,
+            label: Link Href,
+            widget: string,
+            default: "https://www.talnesichi.com/",
+          }
           - {
               name: heroImage,
               label: Hero Image,
