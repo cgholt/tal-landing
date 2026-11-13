@@ -8,6 +8,8 @@ export default function Hero({
   subtitle,
   ctaText,
   ctaHref,
+  ctaLinkText,
+  ctaLinkHref,
   image,
   imageCredit,
   imagePosition = "top",
@@ -16,6 +18,8 @@ export default function Hero({
   subtitle?: string;
   ctaText?: string;
   ctaHref?: string;
+  ctaLinkText?: string;
+  ctaLinkHref?: string;
   image?: string | null;
   imageCredit?: string;
   imagePosition?: string;
@@ -79,6 +83,19 @@ export default function Hero({
                 {ctaText}
               </Link>
             </div>
+          )}
+          {ctaLinkText && ctaLinkHref && (
+              <div>
+                <Link
+                    href={ctaLinkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-[family-name:var(--font-fanwood)] text-lg md:text-xl text-surface/85 underline"
+                >
+                  {ctaLinkText}
+                </Link>
+                <text className="font-[family-name:var(--font-fanwood)] text-lg md:text-xl text-surface/85">↗︎</text>
+              </div>
           )}
         </div>
       </div>

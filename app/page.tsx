@@ -34,6 +34,8 @@ export default function HomePage() {
         subtitle={homepage.heroSubtitle}
         ctaText={homepage.heroCtaText}
         ctaHref={homepage.heroCtaHref}
+        ctaLinkText={homepage.heroCtaLinkText}
+        ctaLinkHref={homepage.heroCtaLinkHref}
         backgroundImage={homepage.heroBackgroundImage}
         portraitImage={homepage.heroImage}
         portraitImagePosition={homepage.heroImagePosition}
